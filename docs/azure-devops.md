@@ -17,6 +17,12 @@ For the purpose of this workshop we will run the MCP server locally, and so you 
 - npm or yarn
 - Azure DevOps account with appropriate access
 
+## Production Use
+
+For ease of use in this workshop, we will be running the MCP server locally using Stdio, an will authenticate using a PAT token. This is suitable for a single user to get familiar with use the MCP server.
+
+If you want to roll out the use of this MCP server to a larger group of people in production, you may want to look at running the server remotely using SSE or HTTP Streaming, and authenticating using a Managed Identity or Service Principal.
+
 ## Module Sections
 
 ### 1. Add MCP Server to VS Code
@@ -154,3 +160,15 @@ Click "Create" and copy the generated token
 ![MCP Close Work Item](images/mcp-close-work-item.png)
 
 - Make sure you commit your changes to Git to ensure the code is actually updated. If you we're using Azure DevOps to store your code, you could also get GitHub Copilot to assist with creating a Pull Request, and even merging it once complete.
+
+
+## Next Steps
+
+In this workshop me mainly worked with Azure DevOps Work Items, however this MCP server can work with many other ADO resources. You could look into:
+
+- Creating branches and pull requests
+- Triggering pipelines and releases
+- Creating repositories for new code
+- Create a new bug based on some issues you found in the code
+- Summarise your current workload status for standups
+- Enhance or improve Work Item contents

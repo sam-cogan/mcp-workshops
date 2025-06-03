@@ -1,8 +1,8 @@
-# MCP Workshops
+# About
 
 This repo contains a collection of workshops for working with MCP servers with GitHub Copilot.
 
-## Workshopws
+## Workshops
 
 ### [1. Azure DevOps MCP Server](azure-devops.md)
 
