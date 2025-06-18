@@ -8,7 +8,7 @@ The [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp) is 
 - Pull Requests
 - Branches
 - Pipelines
-= Test Plans
+- Test Plans
 
 ## Prerequisites
 
