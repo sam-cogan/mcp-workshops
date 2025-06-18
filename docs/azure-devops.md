@@ -1,6 +1,6 @@
 # Azure DevOps
 
-The [Azure DevOps MCP Server](https://github.com/Tiberriver256/mcp-server-azure-devops) is a third party implementation by [Micah Rairdon](https://github.com/Tiberriver256), which allows AI assistants, like GitHub Copilot, to interact with Azure DevOps. This MCP Server supports working with:
+The [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp) is an MCP server created by Microsoft, which allows AI assistants, like GitHub Copilot, to interact with Azure DevOps. This MCP Server supports working with:
 
 - Projects
 - Work Items
@@ -8,6 +8,7 @@ The [Azure DevOps MCP Server](https://github.com/Tiberriver256/mcp-server-azure-
 - Pull Requests
 - Branches
 - Pipelines
+= Test Plans
 
 ## Prerequisites
 
@@ -19,9 +20,10 @@ For the purpose of this workshop we will run the MCP server locally, and so you 
 
 ## Production Use
 
-For ease of use in this workshop, we will be running the MCP server locally using Stdio, and will authenticate using a PAT token. This is suitable for a single user to get familiar with using the MCP server.
+For ease of use in this workshop, we will be running the MCP server locally using Stdio,  This is suitable for a single user to work locally with the MCP server.
 
-If you want to roll out the use of this MCP server to a larger group of people in production, you may want to look at running the server remotely using SSE or HTTP Streaming, and authenticating using a Managed Identity or Service Principal.
+Currently the Azure DevOps MCP server is in preview, and does not support running remotely using SSE or HTTP Streaming.
+
 
 ## Module Sections
 
@@ -42,23 +44,9 @@ If you want to roll out the use of this MCP server to a larger group of people i
 }
 ```
 
-#### 1.2 Generate PAT
+#### 1.2 Authenticate
 
-To keep things simple, we will use a Personal Access Token (PAT) to access Azure DevOps. You will need to generate this token using the following steps:
-
-- Go to https://dev.azure.com/{your-organization}/_usersSettings/tokens or click on your profile picture > Personal access tokens
-- Select "+ New Token"
-- Name your token (e.g., "MCP Server Access")
-- Set an expiration date
-- Select the following scopes:
-  - Code: Read & Write
-  - Work Items: Read & Write
-  - Build: Read & Execute
-  - Project and Team: Read
-  - Graph: Read
-  - Release: Read & Execute
-
-Click "Create" and copy the generated token
+The Azure DevOps MCP server uses your Entra ID credentials to authenticate to Azure DevOps. Ensure that you have an Azure DevOps Org that is backed by Entra ID, and that you are logged in to the Azure CLI with your Entra ID user and the correct tenant selected.
 
 #### 1.3 Add MCP Server
 
@@ -68,24 +56,16 @@ Click "Create" and copy the generated token
 {
     "inputs": [
         {
-            "id": "ado_pat_token",
+            "id": "ado_org",
             "type": "promptString",
-            "description": "Azure DevOps Personal Access Token",
-            "password": true
+            "description": "Azure DevOps organization name  (e.g. 'contoso')"
         }
     ],
     "servers": {
-        "azureDevOps": {
-            "command": "npx",
-            "args": [
-                "@tiberriver256/mcp-server-azure-devops",
-            ],
-            "env": {
-                "AZURE_DEVOPS_PAT": "${input:ado_pat_token}",
-                "AZURE_DEVOPS_AUTH_METHOD": "pat",
-                "AZURE_DEVOPS_ORG_URL": "https://dev.azure.com/<Azure DevOps Organization Name>",
-                "AZURE_DEVOPS_DEFAULT_PROJECT": "<Azure DevOps Project>"
-            }
+        "ado": {
+         "type": "stdio",
+         "command": "mcp-server-azuredevops",
+         "args": ["${input:ado_org}"]
         }
     }
 }
