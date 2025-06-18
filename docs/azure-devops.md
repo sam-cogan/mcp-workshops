@@ -79,7 +79,7 @@ The Azure DevOps MCP server uses your Entra ID credentials to authenticate to Az
 
 ![Start MCP Server](images/mcp-start.png)
 
-- Azure DevOps should ask you to input your PAT, enter this in the text box and hit enter.
+- Azure DevOps should ask you to input your Azure DevOps organisation name. Enter just the org name, not the full URL.
 
 - After a few seconds, the server should show as running
 
