@@ -1,0 +1,814 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Azure DevOps - MCP Workshops</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#azure-devops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MCP Workshops" class="md-header__button md-logo" aria-label="MCP Workshops" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MCP Workshops
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Azure DevOps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MCP Workshops" class="md-nav__button md-logo" aria-label="MCP Workshops" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MCP Workshops
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Azure DevOps
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure DevOps
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Sections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Sections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-mcp-server-to-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add MCP Server to VS Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Add MCP Server to VS Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-mcpjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Create MCP.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-authenticate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Authenticate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-add-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Add MCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-start-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Start the MCP Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Use the MCP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Use the MCP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-validate-mcp-server-is-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Validate MCP Server is Selected
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-query-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Query A Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-change-the-state-of-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Change the State of a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-work-on-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Work on a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-close-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Close a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Sections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Sections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-mcp-server-to-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add MCP Server to VS Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Add MCP Server to VS Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-mcpjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Create MCP.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-authenticate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Authenticate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-add-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Add MCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-start-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Start the MCP Server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Use the MCP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Use the MCP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-validate-mcp-server-is-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Validate MCP Server is Selected
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-query-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Query A Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-change-the-state-of-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Change the State of a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-work-on-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Work on a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-close-a-work-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Close a Work Item
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="azure-devops">Azure DevOps</h1>
+<p>The <a href="https://github.com/microsoft/azure-devops-mcp">Azure DevOps MCP Server</a> is an MCP server created by Microsoft, which allows AI assistants, like GitHub Copilot, to interact with Azure DevOps. This MCP Server supports working with:</p>
+<ul>
+<li>Projects</li>
+<li>Work Items</li>
+<li>Repositories</li>
+<li>Pull Requests</li>
+<li>Branches</li>
+<li>Pipelines</li>
+<li>Test Plans</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>For the purpose of this workshop we will run the MCP server locally, and so you will need the following:</p>
+<ul>
+<li>Node.js (v16+)</li>
+<li>npm or yarn</li>
+<li>Azure DevOps account with appropriate access</li>
+</ul>
+<h2 id="production-use">Production Use</h2>
+<p>For ease of use in this workshop, we will be running the MCP server locally using Stdio,  This is suitable for a single user to work locally with the MCP server.</p>
+<p>Currently the Azure DevOps MCP server is in preview, and does not support running remotely using SSE or HTTP Streaming.</p>
+<h2 id="module-sections">Module Sections</h2>
+<h3 id="1-add-mcp-server-to-vs-code">1. Add MCP Server to VS Code</h3>
+<h4 id="11-create-mcpjson">1.1 Create MCP.json</h4>
+<ul>
+<li>Open the <code>mcp.json</code> file in the <code>.vscode</code> folder. If this does not exist, create it with the content below:</li>
+</ul>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="12-authenticate">1.2 Authenticate</h4>
+<p>The Azure DevOps MCP server uses your Entra ID credentials to authenticate to Azure DevOps. Ensure that you have an Azure DevOps Org that is backed by Entra ID, and that you are logged in to the Azure CLI with your Entra ID user and the correct tenant selected.</p>
+<h4 id="13-add-mcp-server">1.3 Add MCP Server</h4>
+<ul>
+<li>In the servers section of the <code>mcp.json</code> file, add a new entry for our Azure DevOps MCP Server, replacing the sections in <code>&lt;&gt;</code> with your organization and project names:</li>
+</ul>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ado_org&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;promptString&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure DevOps organization name  (e.g. &#39;contoso&#39;)&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&quot;servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">&quot;ado&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stdio&quot;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">         </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcp-server-azuredevops&quot;</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">         </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;${input:ado_org}&quot;</span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>Save the <code>mcp.json</code> file</li>
+</ul>
+<h4 id="14-start-the-mcp-server">1.4 Start the MCP Server</h4>
+<ul>
+<li>Click the start button to start the MCP server inside VS Code.</li>
+</ul>
+<p><img alt="Start MCP Server" src="../images/mcp-start.png" /></p>
+<ul>
+<li>
+<p>Azure DevOps should ask you to input your Azure DevOps organisation name. Enter just the org name, not the full URL.</p>
+</li>
+<li>
+<p>After a few seconds, the server should show as running</p>
+</li>
+</ul>
+<p><img alt="Start MCP Server" src="../images/mcp-running.png" /></p>
+<h3 id="2-use-the-mcp-server">2. Use the MCP Server</h3>
+<h4 id="21-validate-mcp-server-is-selected">2.1 Validate MCP Server is Selected</h4>
+<ul>
+<li>Make sure you are in Agent Mode in Copilot chat. MCP servers can only be used in Agent Mode</li>
+</ul>
+<p><img alt="Chat Tools" src="../images/chat-tools.png" /></p>
+<ul>
+<li>Select the "configure tool" icon in the bottom right of the chat window</li>
+<li>In the window that opens, scroll down and ensure that the Azure DevOps MCP server and all its tools are enabled</li>
+</ul>
+<p><img alt="MCP Tools" src="../images/mcp-tools.png" /></p>
+<h4 id="21-query-a-work-item">2.1 Query A Work Item</h4>
+<ul>
+<li>To use the MCP server we must be in "Agent Mode" in Copilot Chat</li>
+<li>Ask Copilot a question about a work item in Azure DevOps, for example "Tell me about work item with ID 5"</li>
+<li>Copilot will select the appropriate MCP tool to use, and will ask you to consent to using that tool to talk to Azure DevOps</li>
+</ul>
+<p><img alt="MCP Consent" src="../images/mcp-consent.png" /></p>
+<ul>
+<li>Click continue, GitHub Copilot should now answer your question about the work item, providing details about the work item and summarizing the work needed.</li>
+</ul>
+<p><img alt="Work Item" src="../images/mcp-workitem.png" /></p>
+<h4 id="22-change-the-state-of-a-work-item">2.2 Change the State of a Work Item</h4>
+<ul>
+<li>Interaction with the MCP server is bi-directional, so it can write back to Azure DevOps</li>
+<li>Ask GitHub Copilot to "assign work item number 5 to me, and mark as active"</li>
+<li>GitHub Copilot will show you details of the changes it is going to make, and ask you to approve</li>
+</ul>
+<p><img alt="Update Consent" src="../images/mcp-update-consent.png" /></p>
+<ul>
+<li>Once you approve, GitHub Copilot will make the requested changes. You can see the result in GitHub Copilot chat, and in Azure DevOps.</li>
+</ul>
+<p><img alt="MCP Assigned" src="../images/mcp-assigned.png" /></p>
+<p><img alt="MCP Assigned ADO" src="../images/mcp-assigned-ado.png" /></p>
+<h4 id="23-work-on-a-work-item">2.3 Work on a Work Item</h4>
+<ul>
+<li>GitHub Copilot can use this MCP server for more than just administrative tasks. We can use the MCP server to inform GitHub Copilot of the work we need it to do.</li>
+<li>Ask GitHub Copilot to "Implement Work Item Number 5"</li>
+<li>GitHub Copilot will get the information about the Work Item, including the description and acceptance criteria and use this to implement a solution.</li>
+<li>Once GitHub Copilot is finished updating the code, ask it "have we met all the acceptance criteria", it will retrieve these details from the Work Item and provide a status update</li>
+</ul>
+<p><img alt="MCP Status" src="../images/mcp-status.png" /></p>
+<h4 id="24-close-a-work-item">2.4 Close a Work Item</h4>
+<ul>
+<li>Now that we know the code has been updated and all acceptance criteria have been met, ask GitHub Copilot to "Update the work item discussion with details of what we have done, and close it".</li>
+<li>GitHub Copilot will ask for consent to update the Work Item, and will then update the details and close it.</li>
+</ul>
+<p><img alt="MCP Close Work Item" src="../images/mcp-close-work-item.png" /></p>
+<ul>
+<li>Make sure you commit your changes to Git to ensure the code is actually updated. If you were using Azure DevOps to store your code, you could also get GitHub Copilot to assist with creating a Pull Request, and even merging it once complete.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>In this workshop we mainly worked with Azure DevOps Work Items, however this MCP server can work with many other ADO resources. You could look into:</p>
+<ul>
+<li>Creating branches and pull requests</li>
+<li>Triggering pipelines and releases</li>
+<li>Creating repositories for new code</li>
+<li>Creating a new bug based on some issues you found in the code</li>
+<li>Summarizing your current workload status for standups</li>
+<li>Enhance or improve Work Item contents</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
